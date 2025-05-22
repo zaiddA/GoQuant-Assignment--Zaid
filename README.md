@@ -16,7 +16,7 @@ Requirements
 Folder Structure
 ```
 GoQuant/
-├── main.cpp
+├── Test
 ├── OrderBook.cpp / OrderBook.h
 ├── slippage_model.json
 ├── maker_taker_model.json
@@ -28,8 +28,6 @@ Open PowerShell or terminal:
 ```bash
 cd GoQuant
 mkdir build && cd build
-cmake .. -G "MinGW Makefiles"
-mingw32-make
 ```
 Run the Simulator
 ```bash
