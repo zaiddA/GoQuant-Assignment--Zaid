@@ -1,0 +1,5 @@
+if(EXISTS "C:/Users/zaida/Downloads/GoQuant/Test/build/tests/orderbook_tests-b12d07c_tests.cmake")
+  include("C:/Users/zaida/Downloads/GoQuant/Test/build/tests/orderbook_tests-b12d07c_tests.cmake")
+else()
+  add_test(orderbook_tests_NOT_BUILT-b12d07c orderbook_tests_NOT_BUILT-b12d07c)
+endif()

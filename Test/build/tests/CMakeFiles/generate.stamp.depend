@@ -1,0 +1,9 @@
+# CMake generation dependency list for this directory.
+C:/Dev/vcpkg/installed/x64-windows/share/Catch2/Catch.cmake
+C:/Dev/vcpkg/installed/x64-windows/share/Catch2/Catch2Config.cmake
+C:/Dev/vcpkg/installed/x64-windows/share/Catch2/Catch2ConfigVersion.cmake
+C:/Program Files/CMake/share/cmake-4.0/Modules/CTest.cmake
+C:/Program Files/CMake/share/cmake-4.0/Modules/CTestTargets.cmake
+C:/Program Files/CMake/share/cmake-4.0/Modules/CTestUseLaunchers.cmake
+C:/Program Files/CMake/share/cmake-4.0/Modules/DartConfiguration.tcl.in
+C:/Users/zaida/Downloads/GoQuant/Test/tests/CMakeLists.txt

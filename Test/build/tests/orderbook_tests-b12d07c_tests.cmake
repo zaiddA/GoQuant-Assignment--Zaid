@@ -1,0 +1,7 @@
+add_test( [==[OrderBook best-ask & best-bid]==] C:/Users/zaida/Downloads/GoQuant/Test/build/tests/Debug/orderbook_tests.exe [==[OrderBook best-ask & best-bid]==]  )
+set_tests_properties( [==[OrderBook best-ask & best-bid]==] PROPERTIES WORKING_DIRECTORY C:/Users/zaida/Downloads/GoQuant/Test/build/tests SKIP_RETURN_CODE 4)
+add_test( [==[VWAP simulation simple fill]==] C:/Users/zaida/Downloads/GoQuant/Test/build/tests/Debug/orderbook_tests.exe [==[VWAP simulation simple fill]==]  )
+set_tests_properties( [==[VWAP simulation simple fill]==] PROPERTIES WORKING_DIRECTORY C:/Users/zaida/Downloads/GoQuant/Test/build/tests SKIP_RETURN_CODE 4)
+add_test( [==[Spread & depth getters]==] C:/Users/zaida/Downloads/GoQuant/Test/build/tests/Debug/orderbook_tests.exe [==[Spread & depth getters]==]  )
+set_tests_properties( [==[Spread & depth getters]==] PROPERTIES WORKING_DIRECTORY C:/Users/zaida/Downloads/GoQuant/Test/build/tests SKIP_RETURN_CODE 4)
+set( orderbook_tests_TESTS [==[OrderBook best-ask & best-bid]==] [==[VWAP simulation simple fill]==] [==[Spread & depth getters]==])

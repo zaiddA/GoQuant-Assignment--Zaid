@@ -1,0 +1,7 @@
+{
+  "cmake.sourceDirectory": "C:/Users/zaida/Downloads/GoQuant/Test",
+  "files.associations": {
+    "*.ejs": "html",
+    "mutex": "cpp"
+  }
+}

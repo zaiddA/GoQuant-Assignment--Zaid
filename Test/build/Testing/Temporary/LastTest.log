@@ -1,0 +1,63 @@
+Start testing: May 14 18:07 India Standard Time
+----------------------------------------------------------
+1/3 Testing: OrderBook best-ask & best-bid
+1/3 Test: OrderBook best-ask & best-bid
+Command: "C:/Users/zaida/Downloads/GoQuant/Test/build/tests/Debug/orderbook_tests.exe" "OrderBook best-ask & best-bid"
+Directory: C:/Users/zaida/Downloads/GoQuant/Test/build/tests
+"OrderBook best-ask & best-bid" start time: May 14 18:07 India Standard Time
+Output:
+----------------------------------------------------------
+Filters: "OrderBook best-ask & best-bid"
+Randomness seeded to: 2920386639
+===============================================================================
+All tests passed (4 assertions in 1 test case)
+
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"OrderBook best-ask & best-bid" end time: May 14 18:07 India Standard Time
+"OrderBook best-ask & best-bid" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/3 Testing: VWAP simulation simple fill
+2/3 Test: VWAP simulation simple fill
+Command: "C:/Users/zaida/Downloads/GoQuant/Test/build/tests/Debug/orderbook_tests.exe" "VWAP simulation simple fill"
+Directory: C:/Users/zaida/Downloads/GoQuant/Test/build/tests
+"VWAP simulation simple fill" start time: May 14 18:07 India Standard Time
+Output:
+----------------------------------------------------------
+Filters: "VWAP simulation simple fill"
+Randomness seeded to: 993898880
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"VWAP simulation simple fill" end time: May 14 18:07 India Standard Time
+"VWAP simulation simple fill" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/3 Testing: Spread & depth getters
+3/3 Test: Spread & depth getters
+Command: "C:/Users/zaida/Downloads/GoQuant/Test/build/tests/Debug/orderbook_tests.exe" "Spread & depth getters"
+Directory: C:/Users/zaida/Downloads/GoQuant/Test/build/tests
+"Spread & depth getters" start time: May 14 18:07 India Standard Time
+Output:
+----------------------------------------------------------
+Filters: "Spread & depth getters"
+Randomness seeded to: 3341507834
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"Spread & depth getters" end time: May 14 18:07 India Standard Time
+"Spread & depth getters" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: May 14 18:07 India Standard Time

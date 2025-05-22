@@ -1,0 +1,14 @@
+# CMake generation dependency list for this directory.
+C:/Dev/vcpkg/installed/x64-windows/share/benchmark/benchmarkConfig.cmake
+C:/Dev/vcpkg/installed/x64-windows/share/benchmark/benchmarkTargets-debug.cmake
+C:/Dev/vcpkg/installed/x64-windows/share/benchmark/benchmarkTargets-release.cmake
+C:/Dev/vcpkg/installed/x64-windows/share/benchmark/benchmarkTargets.cmake
+C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeFindDependencyMacro.cmake
+C:/Program Files/CMake/share/cmake-4.0/Modules/CheckCXXSourceCompiles.cmake
+C:/Program Files/CMake/share/cmake-4.0/Modules/CheckIncludeFileCXX.cmake
+C:/Program Files/CMake/share/cmake-4.0/Modules/CheckLibraryExists.cmake
+C:/Program Files/CMake/share/cmake-4.0/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-4.0/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-4.0/Modules/FindThreads.cmake
+C:/Users/zaida/Downloads/GoQuant/Test/benchmarks/CMakeLists.txt
+C:/dev/vcpkg/installed/x64-windows/share/benchmark/benchmarkConfigVersion.cmake

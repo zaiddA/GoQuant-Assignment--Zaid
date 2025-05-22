@@ -1,0 +1,10 @@
+^C:\USERS\ZAIDA\DOWNLOADS\GOQUANT\TEST\BUILD\CMAKEFILES\2FD6D69B0855CABF1CD4348A5101BB02\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/zaida/Downloads/GoQuant/Test -BC:/Users/zaida/Downloads/GoQuant/Test/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/zaida/Downloads/GoQuant/Test/build/GoQuantSim.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

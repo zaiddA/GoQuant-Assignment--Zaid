@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\zaida\Downloads\GoQuant\Test\build\CMakeFiles\d44ec2aaa9364c4929921d0b3f47dbb1\Experimental.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\zaida\Downloads\GoQuant\Test\tests\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\zaida\Downloads\GoQuant\Test\build\tests\CMakeFiles\Experimental" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{EBE4F2B8-1474-35A5-A4D3-8F9ADBD09FB7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
