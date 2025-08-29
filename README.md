@@ -95,7 +95,7 @@ Dependencies:
 - benchmark (optional)
 
 ## Setup
-
+After Cloning ->
 ```bash
 cd C:/dev
 # Clone vcpkg
@@ -121,7 +121,7 @@ cmake --build . --config Release
 ```bash
    cd GoQuant/Test/build/Debug
 
-  Run- simulator --symbol BTC-USDT --notional 100 --fee 10 --vol 1000000000 --delay 5 --interval 5
+  Run->  ./simulator.exe --symbol BTC-USDT --notional 100 --fee 10 --vol 1000000000 --delay 5 --interval 5
 ```
 
 ### Example Output:
@@ -332,3 +332,4 @@ This project was developed by Zaid (B.Tech, IIIT Pune).
 ---
 
 _Note: Please let me know if you’d like source code, benchmarking tools, or profiling logs attached or submitted separately._
+
