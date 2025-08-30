@@ -1,56 +1,14 @@
+# GoQuantSim: Real-Time Crypto Market Simulator
 
-### Deliverables
+## Overview
 
-1. **Complete Source Code with Documentation**
+GoQuantSim is a high-performance C++ trade simulator that connects to the OKX exchange using WebSockets and simulates market buy orders to estimate execution cost. It models:
 
-   - All project files including:
-
-     - `main.cpp`, `OrderBook.cpp/.h`, `SimulatorEngine` (if applicable)
-     - Model JSON files: `slippage_model.json`, `maker_taker_model.json`
-     - Build scripts or `CMakeLists.txt`
-
-   - README with updated build instructions, dependency setup, and runtime usage
-   - In-code comments for clarity and maintainability
-
-2. **Video Recording Demonstrating:**
-
-   - **System Functionality:**
-
-     - Launching the simulator executable
-     - Connecting to OKX WebSocket
-     - Displaying real-time simulation outputs
-
-   - **Code Review:**
-
-     - Overview of architecture
-     - Key logic in `main.cpp` and `OrderBook`
-     - Model loading and application flow
-
-   - **Implementation Explanation:**
-
-     - Slippage model structure and formula
-     - Logistic regression in maker/taker prediction
-     - Use of Almgren-Chriss for market impact estimation
-
-3. **(Optional Bonus) Performance Analysis**
-
-   - **Performance Report:**
-
-     - Memory and CPU profiling logs
-     - WebSocket latency tracking over time
-
-   - **Benchmarking Results:**
-
-     - Simulation of 1,000 orders
-     - Average computation time per cycle
-
-   - **Optimization Documentation:**
-
-     - Description of implemented optimizations
-     - Before/after performance comparisons
-
----
-
+- VWAP-based slippage (actual vs. predicted)
+- Exchange taker fees
+- Market impact using the Almgren-Chriss model
+- Maker/taker probabilities via logistic regression
+- Net transaction cost in real-time
 
 ## Features
 
@@ -82,11 +40,11 @@ Dependencies:
 - benchmark (optional)
 
 ## Setup
-After Cloning ->
+
 ```bash
 cd C:/dev
 # Clone vcpkg
-https://github.com/microsoft/vcpkg.git
+git clone https://github.com/microsoft/vcpkg.git
 cd vcpkg
 ./bootstrap-vcpkg.bat
 
@@ -97,26 +55,46 @@ cd vcpkg
 ## Build
 
 ```bash
-cd Test
-cd build
+cd GoQuant/Test
+mkdir build && cd build
 cmake .. -DCMAKE_TOOLCHAIN_FILE=C:/dev/vcpkg/scripts/buildsystems/vcpkg.cmake -DCMAKE_BUILD_TYPE=Release
 cmake --build . --config Release
 ```
 
 ## Run
 
+### Basic Demo
 ```bash
-   cd Test/build/Debug
+cd build/Release
+./simulator.exe --symbol BTC-USDT --notional 1000 --fee 10 --delay 5 --interval 5
+```
 
-  Run->  ./simulator.exe --symbol BTC-USDT --notional 100 --fee 10 --vol 1000000000 --delay 5 --interval 5
+### Advanced Demo (Show Cost Variation)
+```bash
+./simulator.exe --symbol BTC-USDT --notional 100000 --fee 5 --delay 5 --interval 5
 ```
 
 ### Example Output:
 
 ```
-[info] Sim ▶ VWAP-slip=0.000048% , Model-slip=0.000006% ($0.000012), Fee=$0.16, AC Impact=$0.00, Net(AC)=$0.16
-[info] Maker/Taker ▶ Taker Probability = 98.97%
+[info] Params ▶ symbol=BTC-USDT, notional=$100000.00, fee=5bps, vol=$1000000000, delay=5s, interval=5s, sigma=0.500%, lambda=1.0e-06
+[info] Loaded slippage model ▶ intercept=8.000e-04, spread_w=5.000e-04, depth_w=-3.000e-04
+[info] Loaded maker/taker model ▶ intercept=5.146e+00, spread_w=9.480e-01, depth_w=-8.150e-01
+[info] Connected – subscribing to BTC-USDT
+[info] Starting simulation loop every 5 seconds
+[info] Sim ▶ VWAP-slip=0.001868% ($1.868084), Model-slip=0.000680% ($0.679968), Fee=$50.0000, AC Impact=$0.255000, Net(VWAP)=$52.123084, Net(Model)=$50.934968
+[info] Maker/Taker ▶ Taker Probability = 99.17%
 ```
+
+## Output Explanation
+
+- **VWAP-slip**: Actual slippage from walking the ask book
+- **Model-slip**: Predicted slippage using linear regression
+- **Fee**: Exchange taker fee in dollars
+- **AC Impact**: Almgren-Chriss market impact estimate
+- **Net(VWAP)**: Total cost using actual VWAP slippage
+- **Net(Model)**: Total cost using predicted slippage
+- **Taker Probability**: Likelihood of being a taker (aggressive order)
 
 ## Model Training
 
@@ -124,7 +102,8 @@ To train regression models using Python:
 
 ```bash
 python extract_features.py
-python train_model.py
+python train_slippage_model.py
+python train_maker_taker_model.py
 ```
 
 Generates:
@@ -135,7 +114,7 @@ Generates:
 ## Testing
 
 ```bash
-ctest -C Debug
+ctest -C Release
 ```
 
 ## Benchmarking
@@ -145,11 +124,50 @@ cmake --build . --config Release --target orderbook_bench
 ./Release/orderbook_bench.exe
 ```
 
+## Project Structure
+
+```
+Test/
+├── main.cpp                 # Main simulator with WebSocket and simulation loop
+├── OrderBook.h/.cpp         # Thread-safe L2 order book implementation
+├── CMakeLists.txt           # Build configuration
+├── slippage_model.json      # Linear regression coefficients
+├── maker_taker_model.json   # Logistic regression coefficients
+├── train_*.py              # Python training scripts
+├── tests/                  # Unit tests
+├── benchmarks/             # Performance benchmarks
+└── build/Release/          # Compiled executable and dependencies
+```
+
+## Key Components
+
+### OrderBook
+- Thread-safe L2 order book with ordered maps
+- VWAP simulation for market buy orders
+- Best bid/ask, spread, and depth calculations
+
+### Models
+- **Slippage Model**: Linear regression on spread + depth features
+- **Maker/Taker Model**: Logistic regression for fee optimization
+- **Almgren-Chriss**: Market impact estimation
+
+### Real-time Pipeline
+- WebSocket connection to OKX
+- JSON parsing of L2 updates
+- Periodic cost simulation and logging
+
+## Business Value
+
+This simulator helps traders:
+- Estimate execution costs before placing orders
+- Optimize order timing and sizing
+- Understand maker vs taker fee exposure
+- Track execution quality over time
+
 ## Author
 
-This project was developed by Zaid (B.Tech, IIIT Pune).
+This project was developed by Zaid (B.Tech, IIIT Pune) as part of GoQuant's internship screening.
 
 ---
 
-
-
+*Note: The simulator is ready for demo with working models and real-time data connection.* 
