@@ -1,8 +1,8 @@
-# GoQuantSim: Real-Time Crypto Market Simulator
+# QuantSim: Real-Time Crypto Market Simulator
 
 ## Overview
 
-GoQuantSim is a high-performance C++ trade simulator that connects to the OKX exchange using WebSockets and simulates market buy orders to estimate execution cost. It models:
+QuantSim is a high-performance C++ trade simulator that connects to the OKX exchange using WebSockets and simulates market buy orders to estimate execution cost. It models:
 
 - VWAP-based slippage (actual vs. predicted)
 - Exchange taker fees
@@ -166,8 +166,9 @@ This simulator helps traders:
 
 ## Author
 
-This project was developed by Zaid (B.Tech, IIIT Pune) as part of GoQuant's internship screening.
+This project was developed by Zaid (B.Tech, IIIT Pune)
 
 ---
 
 *Note: The simulator is ready for demo with working models and real-time data connection.* 
+
