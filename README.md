@@ -97,7 +97,7 @@ cd vcpkg
 ## Build
 
 ```bash
-cd GoQuant/Test
+cd Test
 cd build
 cmake .. -DCMAKE_TOOLCHAIN_FILE=C:/dev/vcpkg/scripts/buildsystems/vcpkg.cmake -DCMAKE_BUILD_TYPE=Release
 cmake --build . --config Release
@@ -106,7 +106,7 @@ cmake --build . --config Release
 ## Run
 
 ```bash
-   cd GoQuant/Test/build/Debug
+   cd Test/build/Debug
 
   Run->  ./simulator.exe --symbol BTC-USDT --notional 100 --fee 10 --vol 1000000000 --delay 5 --interval 5
 ```
@@ -150,5 +150,6 @@ cmake --build . --config Release --target orderbook_bench
 This project was developed by Zaid (B.Tech, IIIT Pune).
 
 ---
+
 
 
